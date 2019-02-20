@@ -1,0 +1,35 @@
+.container{
+    position: relative;
+}
+
+.container .row.input-row{
+    position: absolute;
+    top:65px;
+
+}
+
+.container .row.input-row button{
+    min-width: 125px;
+}
+
+.row{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.col .card{
+    width: 100%;
+    min-height: 376px;
+}
+
+.alert-danger{
+    display:none;
+}
+
+.results-area{
+    position: absolute;
+    top: 150px;
+    width: 100%;
+}
+

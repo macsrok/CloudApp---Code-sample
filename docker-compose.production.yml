@@ -1,0 +1,29 @@
+version: "2"
+services:
+  app:
+    env_file:
+      - .env
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: "true"
+
+  web:
+    image: linuxserver/letsencrypt
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    container_name: "letsencrypt"
+    volumes:
+      - /root/letsencrypt/conf:/config
+    environment:
+      EMAIL: joe@joesim.ms
+      URL: cloudapp.joesim.ms
+      VALIDATION: http
+      TZ: America/New_York
+    ports:
+    - "80:80"
+    - "443:443"

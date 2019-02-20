@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/spinner.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        There was an error processing that URL, please insure it is correct and try again.
+    </div>
+    <div class="row input-row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">URL</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="url-input">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Asset Type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" data-type="image">images</a>
+                        <a class="dropdown-item" href="#" data-type="video">videos</a>
+                        <a class="dropdown-item" href="#" data-type="css">css</a>
+                        <a class="dropdown-item" href="#" data-type="js">js</a>
+                        <a class="dropdown-item" href="#" data-type="all">all</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="results-area">
+
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script src="/js/main.js"></script>
+<!--Handlebars templates-->
+<script id="image-template" type="text/x-handlebars-template">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src={{url}} alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text">{{name}}</p>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="video-template" type="text/x-handlebars-template">
+    <div class="card" style="width: 18rem;">
+        <video type="video/mp4" class="card-img-top" controls src="{{url}}"></video>
+        <div class="card-body">
+            <p class="card-text">{{name}}</p>
+        </div>
+    </div>
+</script>
+<script id="js-template" type="text/x-handlebars-template">
+    <div class="col">
+        <a href={{url}}>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/images/js.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">{{name}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</script>
+<script id="css-template" type="text/x-handlebars-template">
+    <div class="col">
+        <a href={{url}}>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/images/css.png" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text">{{name}}</p>
+            </div>
+        </div>
+        </a>
+    </div>
+</script>
+</body>
+</html>
